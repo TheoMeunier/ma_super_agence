@@ -1,0 +1,50 @@
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
+Supprimerait .env
+Supprimerait .env.test
+Supprimerait .gitignore
+Supprimerait .idea/.gitignore
+Supprimerait .idea/ma_super_agence.iml
+Supprimerait .idea/misc.xml
+Supprimerait .idea/modules.xml
+Supprimerait .idea/php.xml
+Supprimerait LICENSE
+Supprimerait assets/
+Supprimerait bin/
+Supprimerait composer.json
+Supprimerait composer.lock
+Supprimerait config/
+Supprimerait docker-compose.yml
+Supprimerait docker/
+Supprimerait migrations/
+Supprimerait package.json
+Supprimerait phpunit.xml.dist
+Supprimerait public/index.php
+Supprimerait src/
+Supprimerait symfony.lock
+Supprimerait templates/
+Supprimerait tests/
+Supprimerait translations/
+Supprimerait webpack.config.js
+Supprimerait yarn.lock

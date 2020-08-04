@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    {% for property in properties%}
+    <div class="container mt-4">
+        <h1>{{ property.title }}</h1>
+    </div>
+    {% endfor %}
+{% endblock %}
