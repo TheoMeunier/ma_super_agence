@@ -48,3 +48,4 @@ Supprimerait tests/
 Supprimerait translations/
 Supprimerait webpack.config.js
 Supprimerait yarn.lock
+Supprimerait .idea/vcs.xml

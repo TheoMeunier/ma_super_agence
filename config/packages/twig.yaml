@@ -3,3 +3,4 @@ twig:
         path_image: '%path_directory_image%'
 
     default_path: '%kernel.project_dir%/templates'
+    form_theme: ['bootstrap_4_horizontal_layout.html.twig']
