@@ -5,9 +5,6 @@
 {% block body %}
     <div class="container mt-4">
         <h1>Editer le bien</h1>
-        {{ form_start(form) }}
-            {{ form_rest(form) }}
-        <buttom class="btn btn-primary" type="submit">Editer</buttom>
-        {{ form_end(form) }}
+        {{  include('admin/form.html.twig', {form: form, button: 'Etiter'}) }}
     </div>
 {% endblock %}

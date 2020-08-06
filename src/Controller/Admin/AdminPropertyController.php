@@ -9,7 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use function Symfony\Component\String\s;
 
 class AdminPropertyController extends AbstractController
 {
@@ -35,6 +34,32 @@ class AdminPropertyController extends AbstractController
             ]);
     }
 
+    /**
+     * @Route("/admin/new", name="admin.new")
+     */
+    public function new(Request $request)
+    {
+        $property = new Property();
+        $form = $this->createForm(PropertyType::class, $property);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid())
+        {
+           $this->em->persist($property);
+            $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', "bien crée avec succès");
+
+
+            return $this->redirectToRoute('admin.index');
+        }
+
+        return $this->render('admin/new.html.twig',[
+            'property'=>$property,
+            'form' => $form->createView(),
+            'current_menu' => 'properties',
+        ]);
+    }
+
      /**
       * @Route("/admin/{id}", name="admin.edit", methods={"GET", "POST"})
      */
@@ -45,6 +70,7 @@ class AdminPropertyController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()){
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', "bien modifier avec succès");
 
             return $this->redirectToRoute('admin.index');
         }
@@ -54,5 +80,24 @@ class AdminPropertyController extends AbstractController
             'form' => $form->createView(),
             'current_menu' => 'properties',
             ]);
+    }
+
+    /**
+     * @Route("/admin/{id}", name="admin.delete", methods={"DELETE"})
+     */
+    public function delete(Property $property, Request $request)
+    {
+        if ($this->isCsrfTokenValid('delete' .$property->getId(), $request->get('_token'))){
+
+            $this->em->remove($property);
+            $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', "bien supprimer avec succès");
+
+        }
+
+        return $this->render('admin/index.html.twig',[
+            'property'=>$property,
+            'current_menu' => 'properties',
+        ]);
     }
 }
