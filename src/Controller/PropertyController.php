@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\PropertySearch;
+use App\Form\PropertySearchType;
 use App\Repository\PropertyRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
@@ -11,6 +13,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PropertyController extends AbstractController
 {
+
+    const PAGE_RANGE = 12;
 
     private PropertyRepository $repository;
     private EntityManagerInterface $em;
@@ -26,16 +30,23 @@ class PropertyController extends AbstractController
      */
     public function index(PaginatorInterface $paginator, Request $request)
     {
-        $proprety =$this->$paginator->paginate(
-            $this->repository->findAllVisibleQuery(),
-            $request->getQuery()->getInt('page', 1),
-            12
+        $search = new PropertySearch();
+        $form = $this->createForm(PropertySearchType::class, $search);
+        $form->handleRequest($request);
+
+        $properties = $paginator->paginate(
+            $this->repository->findAllVisibleQuery($search),
+            $request->query->getInt('page', 1),
+            self::PAGE_RANGE
         );
+
         return $this->render('property/index.html.twig', [
+            'properties' => $properties,
             'current_menu' => 'properties',
-            'properties' => $proprety,
+            'form' => $form->createView()
         ]);
     }
+
 
     /**
      * @Route("/bien/{id}", name="property.show")

@@ -47,7 +47,7 @@ class AdminPropertyController extends AbstractController
         {
            $this->em->persist($property);
             $this->getDoctrine()->getManager()->flush();
-            $this->addFlash('success', "bien crée avec succès");
+            $this->addFlash('success', " Le bien été crée avec succès");
 
 
             return $this->redirectToRoute('admin.index');
@@ -70,7 +70,7 @@ class AdminPropertyController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()){
             $this->getDoctrine()->getManager()->flush();
-            $this->addFlash('success', "bien modifier avec succès");
+            $this->addFlash('success', " Le bien été modifier avec succès");
 
             return $this->redirectToRoute('admin.index');
         }
@@ -91,7 +91,7 @@ class AdminPropertyController extends AbstractController
 
             $this->em->remove($property);
             $this->getDoctrine()->getManager()->flush();
-            $this->addFlash('success', "bien supprimer avec succès");
+            $this->addFlash('success', " Le bien été supprimer avec succès");
 
         }
 
