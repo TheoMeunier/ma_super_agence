@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller\Admin;
 
+use App\Entity\Option;
 use App\Entity\Property;
 use App\Form\PropertyType;
 use App\Repository\PropertyRepository;
@@ -22,20 +23,20 @@ class AdminPropertyController extends AbstractController
     }
 
     /**
-     * @Route("/admin", name="admin.index")
+     * @Route("/admin", name="admin.property.index")
      */
     public function index()
     {
         $property = $this->repository->findAll();
 
-        return $this->render('admin/index.html.twig',[
+        return $this->render('admin/property/index.html.twig',[
             'property'=>$property,
             'current_menu' => 'properties',
             ]);
     }
 
     /**
-     * @Route("/admin/new", name="admin.new")
+     * @Route("/admin/new", name="admin.property.new")
      */
     public function new(Request $request)
     {
@@ -50,10 +51,10 @@ class AdminPropertyController extends AbstractController
             $this->addFlash('success', " Le bien été crée avec succès");
 
 
-            return $this->redirectToRoute('admin.index');
+            return $this->redirectToRoute('admin.property.index');
         }
 
-        return $this->render('admin/new.html.twig',[
+        return $this->render('admin/property/new.html.twig',[
             'property'=>$property,
             'form' => $form->createView(),
             'current_menu' => 'properties',
@@ -61,7 +62,7 @@ class AdminPropertyController extends AbstractController
     }
 
      /**
-      * @Route("/admin/{id}", name="admin.edit", methods={"GET", "POST"})
+      * @Route("/admin/{id}", name="admin.property.edit", methods={"GET", "POST"})
      */
     public function edit(Property $property, Request $request): Response
     {
@@ -72,10 +73,10 @@ class AdminPropertyController extends AbstractController
             $this->getDoctrine()->getManager()->flush();
             $this->addFlash('success', " Le bien été modifier avec succès");
 
-            return $this->redirectToRoute('admin.index');
+            return $this->redirectToRoute('admin.property.index');
         }
 
-        return $this->render('admin/edit.html.twig',[
+        return $this->render('admin/property/edit.html.twig',[
             'property'=>$property,
             'form' => $form->createView(),
             'current_menu' => 'properties',
@@ -83,7 +84,7 @@ class AdminPropertyController extends AbstractController
     }
 
     /**
-     * @Route("/admin/{id}", name="admin.delete", methods={"DELETE"})
+     * @Route("/admin/{id}", name="admin.property.delete", methods={"DELETE"})
      */
     public function delete(Property $property, Request $request)
     {
@@ -95,7 +96,7 @@ class AdminPropertyController extends AbstractController
 
         }
 
-        return $this->render('admin/index.html.twig',[
+        return $this->render('admin/property/index.html.twig',[
             'property'=>$property,
             'current_menu' => 'properties',
         ]);

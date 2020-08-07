@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Gérer les biens{% endblock %}
+{% block title %}Gérer les options{% endblock %}
 
 {% block body %}
     <div class="container mt-4">
-        <h1>Gérer les bien</h1>
+        <h1>Gérer les option</h1>
 
         {% for message in app.flashes('success') %}
         <div class="alert alert-success">
@@ -15,19 +15,19 @@
         <table class="table table-striped">
             <head>
                 <tr>
-                    <th>Titre</th>
+                    <th>nom</th>
                     <th>Action</th>
                 </tr>
             </head>
             <tbody>
-            {% for property in property%}
+            {% for option in options%}
                 <tr>
-                    <td>{{ property.title }}</td>
+                    <td>{{ option.name }}</td>
                     <td>
-                        <a href="{{ path('admin.edit', {id : property.id}) }}" class="btn btn-secondary">Editer</a>
-                        <form method="post" action="{{ path('admin.delete', {id: property.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes vous vraiment sur ?')">
+                        <a href="{{ path('admin.option.edit', {id : option.id}) }}" class="btn btn-secondary">Editer</a>
+                        <form method="post" action="{{ path('admin.option.delete', {id: option.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes vous vraiment sur ?')">
                             <input type="hidden" name="_method" value="DELETE">
-                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ property.id) }}">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ option.id) }}">
                             <button class="btn btn-danger">Supprimer</button>
                         </form>
                     </td>
@@ -36,7 +36,7 @@
             </tbody>
         </table>
         <div class="text-right">
-            <a href="{{ path('admin.new') }}" class="btn btn-primary">Crée un nouveau bien</a>
+            <a href="{{ path('admin.option.new') }}" class="btn btn-primary">Crée un nouveau bien</a>
         </div>
     </div>
 {% endblock %}
