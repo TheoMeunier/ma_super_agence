@@ -85,7 +85,7 @@ class Property
     private string $postal_code;
 
     /**
-     * @ORM\Column(type="boolean", options={"default":"false"})
+     * @ORM\Column(type="boolean", options={"default":0})
      */
     private bool $sold;
 
