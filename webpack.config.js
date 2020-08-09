@@ -67,9 +67,9 @@ Encore
     // uncomment if you're having problems with a jQuery plugin
     //.autoProvidejQuery()
 
-    // uncomment if you use API Platform admin (composer req api-admin)
+    // uncomment if you use API Platform property (composer req api-property)
     //.enableReactPreset()
-    //.addEntry('admin', './assets/js/admin.js')
+    //.addEntry('property', './assets/js/property.js')
 
     .addPlugin(new CopyWebpackPlugin(
         {
