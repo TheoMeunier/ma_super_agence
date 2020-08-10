@@ -13,4 +13,8 @@ import '../scss/app.scss';
 import $ from 'jquery';
 import popper from 'popper.js';
 import bootstrap from 'bootstrap';
-require('select2');
+import select2 from 'select2';
+
+$(document).ready(function() {
+    $('.js-select2-input').select2();
+});

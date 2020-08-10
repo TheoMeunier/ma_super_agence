@@ -28,7 +28,10 @@ class PropertyType extends AbstractType
             ->add('options', EntityType::class,[
                 'class'=> Option::class,
                 'choice_label'=> 'name',
-                'multiple'=> true
+                'multiple'=> true,
+                'attr'=> [
+                    'class'=> 'js-select2-input'
+                ],
             ])
             ->add('city')
             ->add('address')

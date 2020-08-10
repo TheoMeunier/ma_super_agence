@@ -21,21 +21,24 @@ class PropertySearchType extends AbstractType
                 'label'=> false,
                 'attr'=>[
                     'placeholder'=> 'Surface minimal'
-                ]
+                ],
             ])
             ->add('maxPrice', IntegerType::class, [
                 'required'=> false,
                 'label'=> false,
                 'attr'=>[
                     'placeholder'=> 'Budget max'
-                ]
+                ],
             ])
             ->add('options', EntityType::class,[
                 'required'=> false,
                 'label'=> false,
                 'class'=> Option::class,
                 'choice_label'=> 'name',
-                'multiple'=> true
+                'multiple'=> true,
+                'attr'=> [
+                    'class'=> 'js-select2-input'
+                ],
             ])
         ;
     }
