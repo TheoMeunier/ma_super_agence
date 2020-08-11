@@ -7,18 +7,21 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=PropertyRepository::class)
  * @UniqueEntity("title")
+ * @Vich\Uploadable()
  */
 class Property
 {
 
     const HEAT = [
-        0=>'ELECTRIQUE',
-        1=>'GAZ'
+        0 => 'ELECTRIQUE',
+        1 => 'GAZ'
     ];
 
     /**
@@ -27,6 +30,18 @@ class Property
      * @ORM\Column(type="integer")
      */
     private int  $id;
+
+    /**
+     * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName", size="imageSize")
+     * @var File|null
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="string")
+     * @var string|null
+     */
+    private $imageName;
 
     /**
      * @Assert\Length(min=5, max="255")
@@ -192,7 +207,7 @@ class Property
 
     public function getFormattedPrice(): string
     {
-        return number_format($this->price,0,'',' ');
+        return number_format($this->price, 0, '', ' ');
     }
 
     public function setPrice(int $price): self
@@ -281,7 +296,7 @@ class Property
 
     public function getFormatAddress()
     {
-        return $this->address . " " .$this->postal_code . " " . $this->city;
+        return $this->address . " " . $this->postal_code . " " . $this->city;
     }
 
     /**
@@ -311,4 +326,25 @@ class Property
 
         return $this;
     }
+
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageName(?string $imageName): void
+    {
+        $this->imageName = $imageName;
+    }
+
+    public function getImageName(): ?string
+    {
+        return $this->imageName;
+    }
+
 }
