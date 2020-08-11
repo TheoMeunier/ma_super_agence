@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
@@ -30,18 +31,6 @@ class Property
      * @ORM\Column(type="integer")
      */
     private int  $id;
-
-    /**
-     * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName", size="imageSize")
-     * @var File|null
-     */
-    private $imageFile;
-
-    /**
-     * @ORM\Column(type="string")
-     * @var string|null
-     */
-    private $imageName;
 
     /**
      * @Assert\Length(min=5, max="255")
@@ -115,6 +104,11 @@ class Property
      * @ORM\ManyToMany(targetEntity=Option::class, inversedBy="properties")
      */
     private $options;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image;
 
     public function __construct()
     {
@@ -327,24 +321,22 @@ class Property
         return $this;
     }
 
-    public function setImageFile(?File $imageFile = null): void
+    /**
+     * @return mixed
+     */
+    public function getImage()
     {
-        $this->imageFile = $imageFile;
+        return $this->image;
     }
 
-    public function getImageFile(): ?File
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image): self
     {
-        return $this->imageFile;
-    }
+        $this->image = $image;
 
-    public function setImageName(?string $imageName): void
-    {
-        $this->imageName = $imageName;
-    }
-
-    public function getImageName(): ?string
-    {
-        return $this->imageName;
+        return $this;
     }
 
 }
