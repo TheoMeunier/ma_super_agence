@@ -16,6 +16,14 @@
     <div class="col-md-2">{{ form_row(form.postal_code) }}</div>
     <div class="col-md-1">{{ form_row(form.sold) }}</div>
 </div>
+<div class="row">
+    <div class="col-md-12">{{ form_row(form.image) }}</div>
+    {% if property.image %}
+        <div class="col-md-5">
+            <a href="{{ path('admin.properdy.delete_image', {'id': property.id}) }}">Supprimer l'image</a>
+        </div>
+    {% endif %}
+</div>
 {{ form_rest(form) }}
 <button class="btn btn-primary">{{ button | default('Enregistrer') }}</button>
 {{ form_end(form) }}

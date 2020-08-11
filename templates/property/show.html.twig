@@ -7,13 +7,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-
-
+                    {% if property.image is null %}
+                        <picture>
+                            <source srcset="{{ asset(path_image ~ 'house.svg') }}" type="image/svg+xml">
+                            <img src="{{ asset(path_image ~ 'house.svg') }}" class="img-fluid img-thumbnail"
+                                 alt="{{ property.title }}">
+                        </picture>
+                    {% else %}
+                        <img src="{{ asset(path_image_upload ~ property.image) }}" class="img-fluid img-thumbnail"
+                             alt="{{ property.title }}">
+                    {% endif %}
                 </div>
                 <div class="col-md-4">
                     <h1>{{ property.title }}</h1>
-                    <h2>{{ property.rooms }} pièces - {{ property.surface}} m2</h2>
-                    <div class="text-primary" style="font-size: 4em; font-weight: bold">{{ property.formattedPrice }}€</div>
+                    <h2>{{ property.rooms }} pièces - {{ property.surface }} m2</h2>
+                    <div class="text-primary" style="font-size: 4em; font-weight: bold">{{ property.formattedPrice }}€
+                    </div>
                     <a href="#" class="btn btn-primary">Contacter l'agence</a>
                 </div>
             </div>

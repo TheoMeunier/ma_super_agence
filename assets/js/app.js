@@ -14,7 +14,9 @@ import $ from 'jquery';
 import popper from 'popper.js';
 import bootstrap from 'bootstrap';
 import select2 from 'select2';
+import bsCustomFileInput from "bs-custom-file-input";
 
 $(document).ready(function() {
+    bsCustomFileInput.init();
     $('.js-select2-input').select2();
 });

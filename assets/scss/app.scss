@@ -1,2 +1,11 @@
+@import "~bootstrap/scss/functions";
+$custom-file-text: (
+        en: "Browse",
+        fr: "Télécharger"
+);
 @import "~bootstrap/scss/bootstrap";
 @import '~select2/src/scss/core';
+
+.custom-file-label::after{
+  content: "Télécharger" !important;
+}
