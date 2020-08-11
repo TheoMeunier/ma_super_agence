@@ -51,3 +51,4 @@ Supprimerait yarn.lock
 Supprimerait .idea/vcs.xml
 
  .env
+/public/upload/
