@@ -9,3 +9,13 @@ $custom-file-text: (
 .custom-file-label::after{
   content: "Télécharger" !important;
 }
+
+.img_acheter {
+  width: 100%;
+  height: auto;
+
+
+}
+
+//import file
+@import "image";

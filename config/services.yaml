@@ -9,6 +9,9 @@ parameters:
 
     path_directory_upload: 'upload/'
 
+    email_noreply: 'nepasrepondre@monagence.fr'
+    email: 'agentimobilier@monagence.fr'
+
 services:
     # default configuration for services in *this* file
     _defaults:

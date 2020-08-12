@@ -2,13 +2,18 @@
 
 namespace App\Controller;
 
+use App\Entity\Contact;
+use App\Entity\Property;
 use App\Entity\PropertySearch;
+use App\Form\ContactType;
 use App\Form\PropertySearchType;
 use App\Repository\PropertyRepository;
+use App\Services\MailerServiceInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PropertyController extends AbstractController
@@ -51,12 +56,35 @@ class PropertyController extends AbstractController
     /**
      * @Route("/bien/{id}", name="property.show")
      */
-    public function show($id)
+    public function show(int $id, Property $property, Request $request, MailerServiceInterface $mailer )
     {
+        $contact = new Contact();
+        $contact->setProperty($property);
+        $form = $this->createForm(ContactType::class, $contact);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $form = $this->getParameter('email_noreply');
+            $to = $this->getParameter('email');
+            $htmlTemplate = 'email/contact.html.twig';
+            $textTemplate = 'email/contact.txt.twig';
+            $params = [
+                'contact'=> $contact,
+            ];
+            $mailer->send($form, $to, $htmlTemplate, $textTemplate, $params);
+            $this->addFlash('success', 'votre email a bien été envoyé');
+
+            return $this->redirectToRoute('property.show', [
+               'id'=> $property->getId()
+            ]);
+        }
+
         $property = $this->repository->find($id);
         return $this->render('property/show.html.twig', [
-            'property'=>$property,
+            'property' => $property,
             'current_menu' => 'properties',
+            'form' => $form->createView()
         ]);
     }
 }

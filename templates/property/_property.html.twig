@@ -1,4 +1,12 @@
 <div class="card mb-4">
+    {% if property.image %}
+        <img src="{{ asset(path_image_upload ~ property.image)  }}" alt="{{ property.title }}" class="img-thumbnail">
+        {% else %}
+            <picture>
+                <source srcset="{{ asset(path_image ~ 'folder-house.svg') }}" type="image/svg+xml">
+                <img src="{{ asset(path_image ~ 'folder-house.svg') }}" class="img-fluid"
+                     alt="{{ property.title }}">
+            </picture>    {% endif %}
     <div class="card-body">
         <h5 class="card-title">
             <a href="{{ path('property.show', {id: property.id}) }}">
@@ -7,7 +15,7 @@
         </h5>
         <p class="card-text">{{ property.surface }} m2 - {{ property.city }} ({{ property.postalCode }})</p>
         <div class="text-primary" style="font-size: 2rem; font-weight: bold">
-            {{ property.formattedPrice }} €
+            {{ property.price | price }} €
         </div>
     </div>
 </div>

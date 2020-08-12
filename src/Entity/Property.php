@@ -199,11 +199,6 @@ class Property
         return $this->price;
     }
 
-    public function getFormattedPrice(): string
-    {
-        return number_format($this->price, 0, '', ' ');
-    }
-
     public function setPrice(int $price): self
     {
         $this->price = $price;

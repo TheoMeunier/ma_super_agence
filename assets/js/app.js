@@ -20,3 +20,10 @@ $(document).ready(function() {
     bsCustomFileInput.init();
     $('.js-select2-input').select2();
 });
+
+let $contactbutton = $('#contactButton')
+$contactbutton.click(e => {
+    e.preventDefault()
+    $('#contactForm').slideDown();
+    $contactbutton.slideUp();
+})
