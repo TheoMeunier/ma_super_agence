@@ -21,9 +21,9 @@ $(document).ready(function() {
     $('.js-select2-input').select2();
 });
 
-let $contactbutton = $('#contactButton')
-$contactbutton.click(e => {
+let $contactButton = $('#contactButton')
+$contactButton.click(e => {
     e.preventDefault()
     $('#contactForm').slideDown();
-    $contactbutton.slideUp();
+    $contactButton.slideUp();
 })
