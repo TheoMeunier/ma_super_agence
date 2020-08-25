@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/bootstrap";
+
+.title {
+  padding: 5px 15px;
+  border-bottom: 5px solid #5eb5e0;
+}
+
+.title > h1 {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  margin: 5px 0;
+}

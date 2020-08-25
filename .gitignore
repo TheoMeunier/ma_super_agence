@@ -1,4 +1,3 @@
-
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -52,7 +51,3 @@ Supprimerait .idea/vcs.xml
 
  .env
 /public/upload/
-
-###> liip/imagine-bundle ###
-/public/media/cache/
-###< liip/imagine-bundle ###

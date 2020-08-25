@@ -4,25 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3a5fa0ada4ba35041ab4959d3edb665",
+    "content-hash": "20eb69e50d85357484c9e4bde6465450",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
-            "version": "1.10.99",
+            "version": "1.10.99.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/package-versions-deprecated.git",
-                "reference": "dd51b4443d58b34b6d9344cf4c288e621c9a826f"
+                "reference": "68c9b502036e820c33445ff4d174327f6bb87486"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/package-versions-deprecated/zipball/dd51b4443d58b34b6d9344cf4c288e621c9a826f",
-                "reference": "dd51b4443d58b34b6d9344cf4c288e621c9a826f",
+                "url": "https://api.github.com/repos/composer/package-versions-deprecated/zipball/68c9b502036e820c33445ff4d174327f6bb87486",
+                "reference": "68c9b502036e820c33445ff4d174327f6bb87486",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.1.0 || ^2.0",
-                "php": "^7"
+                "php": "^7 || ^8"
             },
             "replace": {
                 "ocramius/package-versions": "1.10.99"
@@ -73,20 +73,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-15T08:39:18+00:00"
+            "time": "2020-08-13T12:55:41+00:00"
         },
         {
             "name": "doctrine/annotations",
-            "version": "1.10.3",
+            "version": "1.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "5db60a4969eba0e0c197a19c077780aadbc43c5d"
+                "reference": "bfe91e31984e2ba76df1c1339681770401ec262f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/5db60a4969eba0e0c197a19c077780aadbc43c5d",
-                "reference": "5db60a4969eba0e0c197a19c077780aadbc43c5d",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/bfe91e31984e2ba76df1c1339681770401ec262f",
+                "reference": "bfe91e31984e2ba76df1c1339681770401ec262f",
                 "shasum": ""
             },
             "require": {
@@ -96,7 +96,8 @@
             },
             "require-dev": {
                 "doctrine/cache": "1.*",
-                "phpunit/phpunit": "^7.5"
+                "phpstan/phpstan": "^0.12.20",
+                "phpunit/phpunit": "^7.5 || ^9.1.5"
             },
             "type": "library",
             "extra": {
@@ -142,7 +143,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2020-05-25T17:24:27+00:00"
+            "time": "2020-08-10T19:35:50+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -1231,16 +1232,16 @@
         },
         {
             "name": "doctrine/persistence",
-            "version": "1.3.7",
+            "version": "1.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/persistence.git",
-                "reference": "0af483f91bada1c9ded6c2cfd26ab7d5ab2094e0"
+                "reference": "7a6eac9fb6f61bba91328f15aa7547f4806ca288"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/persistence/zipball/0af483f91bada1c9ded6c2cfd26ab7d5ab2094e0",
-                "reference": "0af483f91bada1c9ded6c2cfd26ab7d5ab2094e0",
+                "url": "https://api.github.com/repos/doctrine/persistence/zipball/7a6eac9fb6f61bba91328f15aa7547f4806ca288",
+                "reference": "7a6eac9fb6f61bba91328f15aa7547f4806ca288",
                 "shasum": ""
             },
             "require": {
@@ -1249,7 +1250,7 @@
                 "doctrine/collections": "^1.0",
                 "doctrine/event-manager": "^1.0",
                 "doctrine/reflection": "^1.2",
-                "php": "^7.1"
+                "php": "^7.1 || ^8.0"
             },
             "conflict": {
                 "doctrine/common": "<2.10@dev"
@@ -1257,7 +1258,8 @@
             "require-dev": {
                 "doctrine/coding-standard": "^6.0",
                 "phpstan/phpstan": "^0.11",
-                "phpunit/phpunit": "^7.0"
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+                "vimeo/psalm": "^3.11"
             },
             "type": "library",
             "extra": {
@@ -1324,7 +1326,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-03-21T15:13:52+00:00"
+            "time": "2020-06-20T12:56:16+00:00"
         },
         {
             "name": "doctrine/reflection",
@@ -1514,6 +1516,56 @@
                 "validator"
             ],
             "time": "2020-08-08T21:28:19+00:00"
+        },
+        {
+            "name": "fzaninotto/faker",
+            "version": "v1.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/fc10d778e4b84d5bd315dad194661e091d307c6f",
+                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0"
+            },
+            "require-dev": {
+                "ext-intl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7",
+                "squizlabs/php_codesniffer": "^2.9.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "time": "2019-12-12T13:22:17+00:00"
         },
         {
             "name": "jms/metadata",
@@ -1719,6 +1771,137 @@
             "time": "2020-07-21T07:55:12+00:00"
         },
         {
+            "name": "knplabs/knp-snappy",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/snappy.git",
+                "reference": "7bac60fb729147b7ccd8532c07df3f52a4afa8a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/snappy/zipball/7bac60fb729147b7ccd8532c07df3f52a4afa8a4",
+                "reference": "7bac60fb729147b7ccd8532c07df3f52a4afa8a4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1",
+                "psr/log": "^1.0",
+                "symfony/process": "~3.4||~4.3||~5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~7.4"
+            },
+            "suggest": {
+                "h4cc/wkhtmltoimage-amd64": "Provides wkhtmltoimage-amd64 binary for Linux-compatible machines, use version `~0.12` as dependency",
+                "h4cc/wkhtmltoimage-i386": "Provides wkhtmltoimage-i386 binary for Linux-compatible machines, use version `~0.12` as dependency",
+                "h4cc/wkhtmltopdf-amd64": "Provides wkhtmltopdf-amd64 binary for Linux-compatible machines, use version `~0.12` as dependency",
+                "h4cc/wkhtmltopdf-i386": "Provides wkhtmltopdf-i386 binary for Linux-compatible machines, use version `~0.12` as dependency",
+                "wemersonjanuario/wkhtmltopdf-windows": "Provides wkhtmltopdf executable for Windows, use version `~0.12` as dependency"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Knp\\Snappy\\": "src/Knp/Snappy"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://github.com/KnpLabs/snappy/contributors"
+                }
+            ],
+            "description": "PHP5 library allowing thumbnail, snapshot or PDF generation from a url or a html page. Wrapper for wkhtmltopdf/wkhtmltoimage.",
+            "homepage": "http://github.com/KnpLabs/snappy",
+            "keywords": [
+                "knp",
+                "knplabs",
+                "pdf",
+                "snapshot",
+                "thumbnail",
+                "wkhtmltopdf"
+            ],
+            "time": "2020-01-20T08:30:30+00:00"
+        },
+        {
+            "name": "knplabs/knp-snappy-bundle",
+            "version": "v1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpSnappyBundle.git",
+                "reference": "717185618888b03daf85a54897a8a11e655a3eeb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpSnappyBundle/zipball/717185618888b03daf85a54897a8a11e655a3eeb",
+                "reference": "717185618888b03daf85a54897a8a11e655a3eeb",
+                "shasum": ""
+            },
+            "require": {
+                "knplabs/knp-snappy": "~1.0,>=1.0.1",
+                "php": ">=7.1",
+                "symfony/framework-bundle": "^3.4|^4.3|^5.0"
+            },
+            "require-dev": {
+                "doctrine/annotations": "~1.0",
+                "symfony/asset": "^3.4|^4.3|^5.0",
+                "symfony/finder": "^3.4|^4.3|^5.0",
+                "symfony/phpunit-bridge": "^4.3|^5.0",
+                "symfony/security-csrf": "^3.4|^4.3|^5.0",
+                "symfony/templating": "^3.4|^4.3|^5.0",
+                "symfony/validator": "^3.4|^4.3|^5.0",
+                "symfony/yaml": "^3.4|^4.3|^5.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Knp\\Bundle\\SnappyBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://github.com/KnpLabs/KnpSnappyBundle/contributors"
+                }
+            ],
+            "description": "Easily create PDF and images in Symfony2 by converting Twig/HTML templates.",
+            "homepage": "http://github.com/KnpLabs/KnpSnappyBundle",
+            "keywords": [
+                "bundle",
+                "knp",
+                "knplabs",
+                "pdf",
+                "snappy"
+            ],
+            "time": "2019-12-30T16:19:53+00:00"
+        },
+        {
             "name": "laminas/laminas-code",
             "version": "3.4.1",
             "source": {
@@ -1839,23 +2022,23 @@
         },
         {
             "name": "laminas/laminas-zendframework-bridge",
-            "version": "1.0.4",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-zendframework-bridge.git",
-                "reference": "fcd87520e4943d968557803919523772475e8ea3"
+                "reference": "4939c81f63a8a4968c108c440275c94955753b19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/fcd87520e4943d968557803919523772475e8ea3",
-                "reference": "fcd87520e4943d968557803919523772475e8ea3",
+                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/4939c81f63a8a4968c108c440275c94955753b19",
+                "reference": "4939c81f63a8a4968c108c440275c94955753b19",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.6 || ^7.0"
+                "php": "^5.6 || ^7.0 || ^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.7 || ^6.5 || ^7.5 || ^8.1",
+                "phpunit/phpunit": "^5.7 || ^6.5 || ^7.5 || ^8.1 || ^9.3",
                 "squizlabs/php_codesniffer": "^3.5"
             },
             "type": "library",
@@ -1893,7 +2076,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2020-05-20T16:45:56+00:00"
+            "time": "2020-08-18T16:34:51+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2122,16 +2305,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "5.2.0",
+            "version": "5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "3170448f5769fe19f456173d833734e0ff1b84df"
+                "reference": "d870572532cd70bc3fab58f2e23ad423c8404c44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/3170448f5769fe19f456173d833734e0ff1b84df",
-                "reference": "3170448f5769fe19f456173d833734e0ff1b84df",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/d870572532cd70bc3fab58f2e23ad423c8404c44",
+                "reference": "d870572532cd70bc3fab58f2e23ad423c8404c44",
                 "shasum": ""
             },
             "require": {
@@ -2170,7 +2353,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2020-07-20T20:05:34+00:00"
+            "time": "2020-08-15T11:14:08+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -4906,7 +5089,7 @@
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
-            "version": "v1.18.0",
+            "version": "v1.18.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
@@ -4984,7 +5167,7 @@
         },
         {
             "name": "symfony/polyfill-intl-icu",
-            "version": "v1.18.0",
+            "version": "v1.18.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-icu.git",
@@ -7387,7 +7570,7 @@
         },
         {
             "name": "twig/extra-bundle",
-            "version": "v3.0.4",
+            "version": "v3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/twig-extra-bundle.git",
@@ -7468,16 +7651,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.0.4",
+            "version": "v3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "582bdbdc173027ebfba3c93dc750a40b8f9ebc02"
+                "reference": "9b76b1535483cdf4edf01bb787b0217b62bd68a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/582bdbdc173027ebfba3c93dc750a40b8f9ebc02",
-                "reference": "582bdbdc173027ebfba3c93dc750a40b8f9ebc02",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/9b76b1535483cdf4edf01bb787b0217b62bd68a5",
+                "reference": "9b76b1535483cdf4edf01bb787b0217b62bd68a5",
                 "shasum": ""
             },
             "require": {
@@ -7528,18 +7711,6 @@
             ],
             "funding": [
                 {
-                    "url": "https://certification.symfony.com/",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://live.symfony.com/",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://symfony.com/cloud/",
-                    "type": "custom"
-                },
-                {
                     "url": "https://github.com/fabpot",
                     "type": "github"
                 },
@@ -7548,7 +7719,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-05T13:18:14+00:00"
+            "time": "2020-08-05T15:13:19+00:00"
         },
         {
             "name": "vich/uploader-bundle",
@@ -7915,224 +8086,17 @@
             "time": "2020-04-02T16:40:37+00:00"
         },
         {
-            "name": "fzaninotto/faker",
-            "version": "v1.9.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/fc10d778e4b84d5bd315dad194661e091d307c6f",
-                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.3 || ^7.0"
-            },
-            "require-dev": {
-                "ext-intl": "*",
-                "phpunit/phpunit": "^4.8.35 || ^5.7",
-                "squizlabs/php_codesniffer": "^2.9.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.9-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Faker\\": "src/Faker/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "François Zaninotto"
-                }
-            ],
-            "description": "Faker is a PHP library that generates fake data for you.",
-            "keywords": [
-                "data",
-                "faker",
-                "fixtures"
-            ],
-            "time": "2019-12-12T13:22:17+00:00"
-        },
-        {
-            "name": "imagine/imagine",
-            "version": "1.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/avalanche123/Imagine.git",
-                "reference": "cb2361e5bb4410b681462d8e4f912bc5dabf84ab"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/cb2361e5bb4410b681462d8e4f912bc5dabf84ab",
-                "reference": "cb2361e5bb4410b681462d8e4f912bc5dabf84ab",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "2.2.*",
-                "phpunit/phpunit": "^4.8 || ^5.7 || ^6.5 || ^7.5 || ^8.4"
-            },
-            "suggest": {
-                "ext-gd": "to use the GD implementation",
-                "ext-gmagick": "to use the Gmagick implementation",
-                "ext-imagick": "to use the Imagick implementation"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "0.7-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Imagine\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bulat Shakirzyanov",
-                    "email": "mallluhuct@gmail.com",
-                    "homepage": "http://avalanche123.com"
-                }
-            ],
-            "description": "Image processing for PHP 5.3",
-            "homepage": "http://imagine.readthedocs.org/",
-            "keywords": [
-                "drawing",
-                "graphics",
-                "image manipulation",
-                "image processing"
-            ],
-            "time": "2019-12-04T09:55:33+00:00"
-        },
-        {
-            "name": "liip/imagine-bundle",
-            "version": "2.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/liip/LiipImagineBundle.git",
-                "reference": "d0819fc9b1cd4e9e16db204467b6fe1a5316a163"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/liip/LiipImagineBundle/zipball/d0819fc9b1cd4e9e16db204467b6fe1a5316a163",
-                "reference": "d0819fc9b1cd4e9e16db204467b6fe1a5316a163",
-                "shasum": ""
-            },
-            "require": {
-                "imagine/imagine": "^0.7.1|^1.1",
-                "php": "^7.1",
-                "symfony/filesystem": "^3.4|^4.3|^5.0",
-                "symfony/finder": "^3.4|^4.3|^5.0",
-                "symfony/framework-bundle": "^3.4|^4.3|^5.0",
-                "symfony/mime": "^4.3|^5.0",
-                "symfony/options-resolver": "^3.4|^4.3|^5.0",
-                "symfony/process": "^3.4|^4.3|^5.0",
-                "symfony/templating": "^3.4|^4.3|^5.0",
-                "twig/twig": "^1.40|^2.9|^3.0"
-            },
-            "require-dev": {
-                "amazonwebservices/aws-sdk-for-php": "^1.0",
-                "aws/aws-sdk-php": "^2.4",
-                "doctrine/cache": "^1.1",
-                "doctrine/orm": "^2.3",
-                "enqueue/enqueue-bundle": "^0.9|^0.10",
-                "ext-gd": "*",
-                "friendsofphp/php-cs-fixer": "^2.10",
-                "league/flysystem": "^1.0",
-                "psr/log": "^1.0",
-                "symfony/browser-kit": "^3.4|^4.3|^5.0",
-                "symfony/console": "^3.4|^4.3|^5.0",
-                "symfony/dependency-injection": "^3.4|^4.3|^5.0",
-                "symfony/form": "^3.4|^4.3|^5.0",
-                "symfony/phpunit-bridge": "^4.3|^5.0",
-                "symfony/validator": "^3.4|^4.3|^5.0",
-                "symfony/yaml": "^3.4|^4.3|^5.0"
-            },
-            "suggest": {
-                "alcaeus/mongo-php-adapter": "required on PHP >= 7.0 to use mongo components with mongodb extension",
-                "amazonwebservices/aws-sdk-for-php": "required to use AWS version 1 cache resolver",
-                "aws/aws-sdk-php": "required to use AWS version 2/3 cache resolver",
-                "doctrine/mongodb-odm": "required to use mongodb-backed doctrine components",
-                "enqueue/enqueue-bundle": "^0.9 add if you like to process images in background",
-                "ext-exif": "required to read EXIF metadata from images",
-                "ext-gd": "required to use gd driver",
-                "ext-gmagick": "required to use gmagick driver",
-                "ext-imagick": "required to use imagick driver",
-                "ext-mongo": "required for mongodb components on PHP <7.0",
-                "ext-mongodb": "required for mongodb components on PHP >=7.0",
-                "league/flysystem": "required to use FlySystem data loader or cache resolver",
-                "monolog/monolog": "A psr/log compatible logger is required to enable logging"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.0": "1.7-dev",
-                    "dev-master": "2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liip\\ImagineBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Liip and other contributors",
-                    "homepage": "https://github.com/liip/LiipImagineBundle/contributors"
-                }
-            ],
-            "description": "This bundle provides an image manipulation abstraction toolkit for Symfony-based projects.",
-            "homepage": "http://liip.ch",
-            "keywords": [
-                "bundle",
-                "image",
-                "imagine",
-                "liip",
-                "manipulation",
-                "photos",
-                "pictures",
-                "symfony",
-                "transformation"
-            ],
-            "time": "2020-06-26T05:55:54+00:00"
-        },
-        {
             "name": "nikic/php-parser",
-            "version": "v4.7.0",
+            "version": "v4.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "21dce06dfbf0365c6a7cc8fdbdc995926c6a9300"
+                "reference": "aaee038b912e567780949787d5fe1977be11a778"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/21dce06dfbf0365c6a7cc8fdbdc995926c6a9300",
-                "reference": "21dce06dfbf0365c6a7cc8fdbdc995926c6a9300",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/aaee038b912e567780949787d5fe1977be11a778",
+                "reference": "aaee038b912e567780949787d5fe1977be11a778",
                 "shasum": ""
             },
             "require": {
@@ -8140,8 +8104,8 @@
                 "php": ">=7.0"
             },
             "require-dev": {
-                "ircmaxell/php-yacc": "0.0.5",
-                "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0"
+                "ircmaxell/php-yacc": "^0.0.7",
+                "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0 || ^9.0"
             },
             "bin": [
                 "bin/php-parse"
@@ -8149,7 +8113,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.7-dev"
+                    "dev-master": "4.9-dev"
                 }
             },
             "autoload": {
@@ -8171,7 +8135,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2020-07-25T13:18:53+00:00"
+            "time": "2020-08-18T19:48:01+00:00"
         },
         {
             "name": "symfony/browser-kit",
@@ -8630,76 +8594,6 @@
                 }
             ],
             "time": "2020-07-23T09:26:24+00:00"
-        },
-        {
-            "name": "symfony/templating",
-            "version": "v5.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/templating.git",
-                "reference": "e999847b7584a8d3f364eecd444615604b0d831c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/templating/zipball/e999847b7584a8d3f364eecd444615604b0d831c",
-                "reference": "e999847b7584a8d3f364eecd444615604b0d831c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.5",
-                "symfony/polyfill-ctype": "~1.8"
-            },
-            "require-dev": {
-                "psr/log": "~1.0"
-            },
-            "suggest": {
-                "psr/log-implementation": "For using debug logging in loaders"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Templating\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Templating Component",
-            "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-07-23T08:36:24+00:00"
         },
         {
             "name": "symfony/web-profiler-bundle",

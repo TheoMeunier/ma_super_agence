@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\String\Slugger\AsciiSlugger;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
@@ -107,6 +108,7 @@ class Property
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Image(mimeTypes={"image/png", "image/jpeg", "image/jpg", "image/gif"})
      */
     private $image;
 
@@ -333,5 +335,11 @@ class Property
 
         return $this;
     }
+
+    public function getSlug()
+    {
+        return (new AsciiSlugger())->slug($this->getTitle());
+    }
+
 
 }

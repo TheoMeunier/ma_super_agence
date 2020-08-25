@@ -7,17 +7,11 @@ ARG NGINX_VERSION=1.15
 ### NGINX
 FROM nginx:${NGINX_VERSION}-alpine AS symfony_docker_nginx
 
-COPY docker/nginx/conf.d /etc/nginx/conf.d/
-
 # Set timezone
 RUN ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
 RUN "date"
 
-RUN apk add --no-cache --virtual .persistent-deps \
-    curl \
-	git \
-	icu-libs \
-	zlib
+RUN apk add --no-cache --virtual .persistent-deps curl git icu-libs zlib
 
 ### PHP
 FROM php:${PHP_VERSION}-fpm-alpine AS symfony_docker_php
@@ -59,12 +53,23 @@ RUN set -eux \
     	&& apk add --no-cache --virtual .php-phpexts-rundeps $runDeps \
     	&& apk del .build-deps
 
+### wkhtmltopdf
+RUN apk add --no-cache \
+    libx11 glib libxrender libxext libintl \
+    libgcc libstdc++ musl \
+    qt5-qtbase qt5-qtbase-x11 qt5-qtsvg qt5-qtwebkit \
+    ttf-dejavu ttf-droid ttf-freefont ttf-liberation ttf-ubuntu-font-family fontconfig
+
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.8/main' >> /etc/apk/repositories && \
+    apk add --no-cache libcrypto1.0 libssl1.0
+
+COPY --from=madnight/docker-alpine-wkhtmltopdf:latest /bin/wkhtmltopdf /usr/bin/wkhtmltopdf
+
+### NodeJS
+RUN apk add --update make nodejs npm yarn
+
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 RUN composer global require hirak/prestissimo
 
 WORKDIR /srv/app
 CMD ["php-fpm"]
-
-COPY . /srv/app
-COPY .env /srv/app/.env
-

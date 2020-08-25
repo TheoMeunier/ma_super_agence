@@ -72,7 +72,7 @@ class AdminPropertyController extends AbstractController
     }
 
     /**
-     * @Route("/admin/{id}", name="admin.property.edit", methods={"GET", "POST"})
+      * @Route("/admin/{id}", name="admin.property.edit", methods={"GET", "POST"}, requirements={"id":"\d+"})
      */
     public function edit(Property $property, Request $request): Response
     {

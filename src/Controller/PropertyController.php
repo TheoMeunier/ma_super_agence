@@ -8,18 +8,19 @@ use App\Entity\PropertySearch;
 use App\Form\ContactType;
 use App\Form\PropertySearchType;
 use App\Repository\PropertyRepository;
+use App\wkhtml\PDFRender;
 use App\Services\MailerServiceInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PropertyController extends AbstractController
 {
 
     const PAGE_RANGE = 12;
+    const EXTENSION_PDF_FORMAT = ".pdf";
 
     private PropertyRepository $repository;
     private EntityManagerInterface $em;
@@ -87,4 +88,19 @@ class PropertyController extends AbstractController
             'form' => $form->createView()
         ]);
     }
+
+    /**
+     * @Route("/bien/pdf/{id}", name="property.pdf")
+     */
+    public function generatePdf (int $id, PDFRender $pdf): \Symfony\Component\HttpFoundation\Response
+    {
+        $property = $this->repository->find($id);
+
+        $html = $this->renderView('pdf/property.html.twig', [
+            'property' => $property,
+        ]);
+
+        return $pdf->render($html, $property->getSlug() . self::EXTENSION_PDF_FORMAT);
+    }
+
 }

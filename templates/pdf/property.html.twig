@@ -1,0 +1,50 @@
+{% extends 'pdf/base_pdf.html.twig' %}
+
+{% block title_pdf %}{{ property.title }}{% endblock %}
+
+{% block body_pdf_content %}
+    <h2>Titre du bien : {{ property.title }}</h2>
+    <div class="pdf-description">
+        {{ property.description | nl2br }}
+    </div>
+    <div class="row">
+        <div class="col">
+            <h2>{{ "show.title.caracteristic" }}</h2>
+            <table class="table table-striped">
+                <tr>
+                    <td>{{ "show.surface" }}</td>
+                    <td>{{ property.surface }} m2</td>
+                </tr>
+                <tr>
+                    <td>{{ "show.rooms" }}</td>
+                    <td>{{ property.rooms }}</td>
+                </tr>
+                <tr>
+                    <td>{{ "show.bedrooms" }}</td>
+                    <td>{{ property.bedrooms }}</td>
+                </tr>
+                <tr>
+                    <td>{{ "show.floor" }}</td>
+                    <td>{{ property.floor }}</td>
+                </tr>
+                <tr>
+                    <td>{{ "show.heatType" }}</td>
+                    <td>{{ property.heatType|trans }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col">
+            <h2>{{ "show.title.specific" }}</h2>
+            <ul class="list-group">
+                {% for option in property.options %}
+                    <li class="list-group-item">{{ option.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div>
+        <img src="{{ asset(pdf_path_image_upload ~ property.image) }}" style="width: 10%"
+             class="img-fluid img-thumbnail"
+             alt="{{ property.title }}">
+    </div>
+{% endblock %}

@@ -6,16 +6,6 @@ $custom-file-text: (
 @import "~bootstrap/scss/bootstrap";
 @import '~select2/src/scss/core';
 
-.custom-file-label::after{
-  content: "Télécharger" !important;
-}
-
-.img_acheter {
-  width: 100%;
-  height: auto;
-
-
-}
 
 //import file
 @import "image";

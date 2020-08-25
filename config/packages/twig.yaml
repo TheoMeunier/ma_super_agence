@@ -2,6 +2,9 @@ twig:
     globals:
         path_image: '%path_directory_image%'
         path_image_upload: '%path_directory_upload%'
+        pdf_path_css: "%kernel.project_dir%/public/"
+        pdf_path_image_upload: "%kernel.project_dir%/public/upload/"
+
 
     default_path: '%kernel.project_dir%/templates'
     form_theme: ['bootstrap_4_layout.html.twig']
