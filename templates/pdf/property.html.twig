@@ -43,8 +43,11 @@
         </div>
     </div>
     <div>
-        <img src="{{ asset(pdf_path_image_upload ~ property.image) }}" style="width: 10%"
-             class="img-fluid img-thumbnail"
-             alt="{{ property.title }}">
+        {% if property.image %}
+            <img src="{{ asset(pdf_path_image_upload ~ property.image) }}" style="width: 10%" class="img-fluid img-thumbnail"
+                 alt="{{ property.title }}">
+        {% else %}
+            <p style="text-align: center">{{ "pdf.empty.image"|trans }}</p>
+        {% endif %}
     </div>
 {% endblock %}
